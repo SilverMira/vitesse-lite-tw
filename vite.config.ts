@@ -1,12 +1,13 @@
 /// <reference types="vitest" />
 
-import path from 'path'
-import { defineConfig } from 'vite'
-import Vue from '@vitejs/plugin-vue'
-import Pages from 'vite-plugin-pages'
-import Components from 'unplugin-vue-components/vite'
-import AutoImport from 'unplugin-auto-import/vite'
-import Unocss from 'unocss/vite'
+import path from 'path';
+import { defineConfig } from 'vite';
+import Vue from '@vitejs/plugin-vue';
+import Pages from 'vite-plugin-pages';
+import Components from 'unplugin-vue-components/vite';
+import AutoImport from 'unplugin-auto-import/vite';
+import Icons from 'unplugin-icons/vite';
+import IconsResolver from 'unplugin-icons/resolver';
 
 export default defineConfig({
   resolve: {
@@ -36,15 +37,17 @@ export default defineConfig({
     // https://github.com/antfu/vite-plugin-components
     Components({
       dts: true,
+      resolvers: [
+        IconsResolver({ prefix: 'i' }),
+      ],
     }),
 
-    // https://github.com/antfu/unocss
-    // see unocss.config.ts for config
-    Unocss(),
+    // https://github.com/antfu/unplugin-icons
+    Icons({ compiler: 'vue3' }),
   ],
 
   // https://github.com/vitest-dev/vitest
   test: {
     environment: 'jsdom',
   },
-})
+});

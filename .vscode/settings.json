@@ -2,9 +2,34 @@
   "cSpell.words": ["Vitesse"],
   "prettier.enable": false,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
   },
   "files.associations": {
-    "*.css": "postcss"
-  }
+  },
+  "editor.formatOnSave": false,
+  "css.validate": false,
+  "scss.validate": false,
+  "[vue]": {
+    "editor.defaultFormatter": "Vue.volar",
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "Vue.volar",
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "Vue.volar",
+  },
+  "[css]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint",
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint",
+  },
+  "stylelint.validate": [
+    "css",
+    "less",
+    "postcss",
+    "scss",
+    "vue"
+  ]
 }

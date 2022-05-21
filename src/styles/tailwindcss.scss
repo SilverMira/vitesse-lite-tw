@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn {
+    @apply px-4;
+    @apply py-1;
+    @apply rounded;
+    @apply inline-block;
+    @apply bg-teal-600;
+    @apply text-white;
+    @apply cursor-pointer;
+    @apply hover:bg-teal-700;
+    @apply disabled:cursor-default;
+    @apply disabled:bg-gray-600;
+    @apply disabled:opacity-50;
+  }
+
+  .icon-btn {
+    @apply text-[0.9em];
+    @apply inline-block;
+    @apply cursor-pointer;
+    @apply select-none;
+    @apply opacity-75;
+    @apply transition;
+    @apply duration-200;
+    @apply ease-in-out;
+    @apply hover:opacity-100;
+    @apply hover:text-teal-600;
+  }
+}
